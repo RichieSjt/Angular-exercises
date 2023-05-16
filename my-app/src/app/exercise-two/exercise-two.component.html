@@ -1,0 +1,17 @@
+<h4>Exercise Two</h4>
+
+<label>Username: </label>
+<input
+    type="text"
+    class="form-control"
+    [(ngModel)]="userName"
+>
+<p>{{ userName }}</p>
+
+<button 
+    class="btn btn-primary"
+    [disabled]="!userName.length"
+    (click)="createUserHandler()"
+>
+    Reset user
+</button>
