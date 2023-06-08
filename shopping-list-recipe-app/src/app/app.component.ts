@@ -6,9 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  selectedPage = 'recipes';
-
-  handleNavigation = (page: string) => {
-    this.selectedPage = page;
-  };
 }
