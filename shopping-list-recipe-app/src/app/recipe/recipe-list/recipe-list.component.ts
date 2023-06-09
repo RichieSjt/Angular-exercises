@@ -15,8 +15,4 @@ export class RecipeListComponent {
   ngOnInit() {
     this.recipes = this.recipeService.getRecipes()
   }
-
-  showRecipeDetail = (recipe: Recipe) => {
-    this.recipeService.onShowRecipeDetail.emit(recipe);
-  };
 }
