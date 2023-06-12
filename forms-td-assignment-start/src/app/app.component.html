@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form  (ngSubmit)="onSubmit()" #formRef="ngForm">
+        <div class="form-group">
+          <label>Email</label>
+          <input
+            type="email"
+            name="email"
+            class="form-control"
+            ngModel
+            email
+            required
+            #mailRef="ngModel"
+          >
+        </div>
+        <p *ngIf="!mailRef.valid && mailRef.touched">Please enter a valid email</p>
+
+        <div class="form-group">
+          <label>Subscription plan</label>
+          <select class="form-control" [ngModel]="subscriptionPlans[1]" name="plan">
+            <option *ngFor="let plan of subscriptionPlans" [value]="plan">{{ plan }}</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label>Password</label>
+          <input
+            name="password"
+            type="password"
+            class="form-control"
+            ngModel
+            required
+            #passwordRef="ngModel"
+          >
+          <p *ngIf="!passwordRef.valid && passwordRef.touched">Please enter a valid password</p>
+        </div>
+
+        <button class="btn btn-primary" [disabled]="!formRef.valid">Sumbit</button>
+      </form>
+      <!-- Add a Form with the following Inputs (and Validators)
+           1) Mail address (should not be empty and should be an email address)
+           2) A Dropdown which allows the user to select from three different Subscriptions ("Basic", "Advanced", "Pro")
+              Set "Advanced" as Default
+           3) A Password field (should not be empty)
+           4) A Submit Button
+
+           Display a warning message if the Form is invalid AND was touched. Display a warning message below each input if it's invalid.
+
+           Upon submitting the form, you should simply print the Value of the Form to the Console.
+           Optionally, display it in your template.
+      -->
+    </div>
+  </div>
+</div>
