@@ -21,6 +21,10 @@ export class ShoppingListComponent {
     );
   }
 
+  editItem(index: number) {
+    this.shoppingListService.selectedItemForEdit.next(index)
+  }
+
   ngOnDestroy() {
     this.ingredientsSubscription.unsubscribe()
   }
